@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script>
+    $(document).on('pageinit', function () {
+      
+      $('#hero_list li').click(function (e) 
+      {
+        var heroName = $(this).text();
+        $('#hero').text(heroName);
+        var heroNum = $(this).index() + 1;
+        $(".heroImg").hide();
+        $("#hero" + heroNum).fadeIn(250);
+      });
+      
+    });
+    
+  </script>
+</head>
+<body>
+  
+  <div is="page" id="home" data-role="page" style="background:-webkit-linear-gradient(#fff,#ff9)">
+    <div is="header" data-role="header" data-position="fixed" data-theme="b">
+      <h3>首頁</h3>
+    </div>
+    <div is="content" role="main" class="ui-content">
+      <ul is="listview" data-role="listview" data-inset="true" style="margin-top:0;">
+        <li is="list-divider" data-role="list-divider" style="text-align:center;font-size:20px; background:-webkit-linear-gradient(#66f,#33a); color:#fff;">食物列表</li>
+      </ul>
+      <ul is="listview" data-role="listview" data-inset="true" id="hero_list" style="margin:0;">
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">滷肉飯</a>
+        </li>
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">牛肉麵</a>
+        </li>
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">拉麵</a>
+        </li>
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">掛包</a>
+        </li>
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">雞排</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Page: Content  -->
+  <div id="Content" data-role="page">
+    <div data-role="header" data-position="fixed" data-theme="b">
+      <h3>介紹</h3>
+      <a class="ui-btn ui-btn-left" href="#home" data-transition="slide" data-direction="reverse">返回</a>
+    </div>
+    <div class="ui-content">
+      <div id="hero" style="font-size:20px; font-weight:bold; width:100%; text-align:center;"></div>
+      <div class="heroImg" id="hero1" style="display:none;"><img src="https://pic.pimg.tw/nw0912/1404391897-70410921.jpg" style="width:100%;"></div>
+      <div class="heroImg" id="hero2" style="display:none;"><img src="http://i2.chuimg.com/49be7bea872c11e6b87c0242ac110003_680w_453h.jpg?imageView2/2/w/660/interlace/1/q/90" style="width:100%;"></div>
+      <div class="heroImg" id="hero3" style="display:none;"><img src="https://farm5.staticflickr.com/4864/44102851300_4969a92f61_b.jpg" style="width:100%;"></div>
+      <div class="heroImg" id="hero4" style="display:none;"><img src="https://www.confuciusbun.com/uploads/editor/images/201812-5c05dab397ee2.jpg" style="width:100%;"></div>
+      <div class="heroImg" id="hero5" style="display:none;"><img src="https://buzzorange.com/vidaorange/wp-content/uploads/sites/3/2018/05/66e5a16b-258c-4c94-ae7e-6c6fed7b7e6f.jpg" style="width:100%;"></div>
+    </div>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script>
+    $(document).on('pageinit', function () {
+      
+      $('#hero_list li').click(function (e) 
+      {
+        var heroName = $(this).text();
+        $('#hero').text(heroName);
+        var heroNum = $(this).index() + 1;
+        $(".heroImg").hide();
+        $("#hero" + heroNum).fadeIn(250);
+      });
+      
+    });
+    
+  </script>
+</head>
+<body>
+  
+  <div is="page" id="home" data-role="page" style="background:-webkit-linear-gradient(#fff,#ff9)">
+    <div is="header" data-role="header" data-position="fixed" data-theme="b">
+      <h3>首頁</h3>
+    </div>
+    <div is="content" role="main" class="ui-content">
+      <ul is="listview" data-role="listview" data-inset="true" style="margin-top:0;">
+        <li is="list-divider" data-role="list-divider" style="text-align:center;font-size:20px; background:-webkit-linear-gradient(#66f,#33a); color:#fff;">加油站</li>
+      </ul>
+      <ul is="listview" data-role="listview" data-inset="true" id="hero_list" style="margin:0;">
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">台灣中油</a>
+        </li>
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">台灣中油虎尾站</a>
+        </li>
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">福懋加油站</a>
+        </li>
+        <li is="listview-li">
+          <a href="#Content" data-transition="slide">台糖光明加油站</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Page: Content  -->
+  <div id="Content" data-role="page">
+    <div data-role="header" data-position="fixed" data-theme="b">
+      <h3>介紹</h3>
+      <a class="ui-btn ui-btn-left" href="#home" data-transition="slide" data-direction="reverse">返回</a>
+    </div>
+    <div class="ui-content">
+      <div id="hero" style="font-size:20px; font-weight:bold; width:100%; text-align:center;"></div>
+      <div class="heroImg" id="hero1" style="display:none;"><img src="images/01.PNG" style="width:100%;"></div>
+      <div class="heroImg" id="hero2" style="display:none;"><img src="images/02.PNG" style="width:100%;"></div>
+      <div class="heroImg" id="hero3" style="display:none;"><img src="images/03.PNG" style="width:100%;"></div>
+      <div class="heroImg" id="hero4" style="display:none;"><img src="images/04.PNG" style="width:100%;"></div>
+    </div>
+  </div>
+  
+</body>
+</html>
